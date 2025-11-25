@@ -1,4 +1,4 @@
-import { Church, Mail, MapPin, Phone } from "lucide-react";
+import { Church, Mail, MapPin, Phone, Instagram } from "lucide-react";
 
 const Footer = () => {
   return (
@@ -21,15 +21,19 @@ const Footer = () => {
               <div className="space-y-3 text-sm text-muted-foreground">
                 <div className="flex items-start gap-2">
                   <MapPin className="w-4 h-4 mt-1 flex-shrink-0" />
-                  <span>Endereço da Paróquia<br />Cidade - Estado</span>
+                  <span>R. L, Lot. Expedicionários I, 417 - Parque Dois Irmãos, Fortaleza - CE</span>
                 </div>
-                <div className="flex items-center gap-2">
+                {/* <div className="flex items-center gap-2">
                   <Phone className="w-4 h-4 flex-shrink-0" />
                   <span>(00) 0000-0000</span>
-                </div>
+                </div> */}
                 <div className="flex items-center gap-2">
                   <Mail className="w-4 h-4 flex-shrink-0" />
-                  <span>contato@paroquiamae.com.br</span>
+                  <span>cpms.saojose@gmail.com</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <Instagram className="w-4 h-4 flex-shrink-0" />
+                  <a href="https://www.instagram.com/cpsaojoseoperario/" target="_blank" rel="noopener noreferrer"><span>cpsaojoseoperario</span></a>
                 </div>
               </div>
             </div>

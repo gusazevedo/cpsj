@@ -9,7 +9,7 @@ const About = () => {
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold mb-6 text-foreground">Sobre o Projeto</h2>
             <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-            O Centro Pastoral São José será construído em uma de nossas 10 capelas, criando um espaço dedicado ao acolhimento, formação e encontro de movimento e pastorais da nossa comunidade paroquial.
+            O Centro Pastoral São José será construído em uma de nossas 10 capelas, criando um espaço dedicado ao acolhimento, formação e encontro de movimentos e pastorais da nossa comunidade paroquial.
             </p>
           </div>
 

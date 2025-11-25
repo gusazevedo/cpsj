@@ -1,5 +1,5 @@
-import { Button } from "@/components/ui/button";
-import { Heart, QrCode } from "lucide-react";
+// import { Button } from "@/components/ui/button";
+import { HandHeart, QrCode } from "lucide-react";
 
 const Donations = () => {
   return (
@@ -33,7 +33,7 @@ const Donations = () => {
 
             <div className="p-8 rounded-2xl bg-card shadow-[var(--shadow-soft)] border border-border">
               <div className="flex items-center gap-3 mb-6">
-                <Heart className="w-8 h-8 text-primary" />
+                <HandHeart className="w-8 h-8 text-primary" />
                 <h3 className="text-2xl font-semibold text-foreground">Outras Formas</h3>
               </div>
               <div className="space-y-6">
@@ -57,10 +57,10 @@ const Donations = () => {
                   </p>
                 </div>
 
-                <Button className="w-full mt-6" size="lg">
+                {/* <Button className="w-full mt-6" size="lg">
                   <Heart className="w-5 h-5 mr-2" />
                   Fazer uma Doação
-                </Button>
+                </Button> */}
               </div>
             </div>
           </div>
