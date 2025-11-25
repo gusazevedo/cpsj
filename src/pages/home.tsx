@@ -5,7 +5,7 @@ import Gallery from "@/components/Gallery";
 import Donations from "@/components/Donations";
 import Footer from "@/components/Footer";
 
-const Index = () => {
+const HomePage = () => {
   return (
     <main className="min-h-screen">
       <Hero />
@@ -18,4 +18,4 @@ const Index = () => {
   );
 };
 
-export default Index;
+export default HomePage;

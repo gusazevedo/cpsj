@@ -1,5 +1,4 @@
-import heroImage from "@/assets/hero-image.jpg";
-import { Church } from "lucide-react";
+import heroImage from "@/assets/externa/externa-1.jpeg";
 import churchLogo from "@/assets/logo.svg";
 
 const Hero = () => {
@@ -18,7 +17,6 @@ const Hero = () => {
       
       <div className="container relative z-10 mx-auto px-4 py-20 text-center">
         <div className="flex justify-center mb-6 animate-fade-in">
-          {/* <Church className="w-16 h-16 text-primary" /> */}
           <img src={churchLogo} alt="Centro Pastoral São José" className="h-[400px]" />
         </div>
         <h1 className="text-5xl md:text-7xl font-bold mb-6 text-foreground animate-slide-up">

@@ -1,6 +1,3 @@
-import gallery1 from "@/assets/gallery-1.jpg";
-import gallery2 from "@/assets/gallery-2.jpg";
-import gallery3 from "@/assets/gallery-3.jpg";
 import { useRef, useState } from "react";
 import { ArrowBigLeft, ArrowBigRight } from "lucide-react";
 import { Link } from "react-router-dom";
@@ -10,7 +7,6 @@ import auditorioOne from "@/assets/auditorio/auditorio-1.jpeg";
 import auditorioTwo from "@/assets/auditorio/auditorio-2.jpeg";
 import insideOne from "@/assets/interna/interna - 1.jpeg";
 import insideTwo from "@/assets/interna/interna - 2.jpeg";
-import outsideOne from "@/assets/externa/externa-1.jpeg";
 import outsideTwo from "@/assets/externa/externa-2.jpeg";
 
 const Gallery = () => {

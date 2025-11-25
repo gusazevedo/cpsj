@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import outsideOne from "@/assets/externa/externa-1.jpeg";
 import outsideTwo from "@/assets/externa/externa-2.jpeg";
 import outsideThree from "@/assets/externa/externa-3.jpeg";
@@ -10,6 +10,8 @@ import auditorioTwo from "@/assets/auditorio/auditorio-2.jpeg";
 import auditorioThree from "@/assets/auditorio/auditorio-3.jpeg";
 import GalleryImageCard from "@/components/GalleryImageCard";
 import Footer from "@/components/Footer";
+import { Navbar } from "@/components/ui/navbar";
+import { useLocation } from "react-router-dom";
 
 const sections = [
   {
@@ -40,9 +42,15 @@ const sections = [
 
 const GalleryPage = () => {
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
 
   return (
     <main className="min-h-screen bg-card">
+      <Navbar />
       <div className="container mx-auto px-4 py-20">
         <div className="max-w-6xl mx-auto space-y-16">
           <div className="text-center">
