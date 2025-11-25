@@ -2,13 +2,13 @@ import { Progress as ProgressBar } from "@/components/ui/progress";
 import { CheckCircle2, Circle, Clock } from "lucide-react";
 
 const Progress = () => {
-  const progress = 35; // Progresso atual da obra em %
+  const progress = 10; // Progresso atual da obra em %
   
   const milestones = [
-    { phase: "Planejamento e Projeto", status: "completed", date: "Concluído" },
-    { phase: "Licenças e Aprovações", status: "completed", date: "Concluído" },
-    { phase: "Preparação do Terreno", status: "in-progress", date: "Em andamento" },
-    { phase: "Fundação", status: "pending", date: "Próxima etapa" },
+    { phase: "Planejamento e Projeto", status: "in-progress", date: "Em andamento" },
+    { phase: "Licenças e Aprovações", status: "pending", date: "Próxima etapa" },
+    { phase: "Preparação do Terreno", status: "pending", date: "Aguardando" },
+    { phase: "Fundação", status: "pending", date: "Aguardando" },
     { phase: "Estrutura", status: "pending", date: "Aguardando" },
     { phase: "Acabamento", status: "pending", date: "Aguardando" },
   ];

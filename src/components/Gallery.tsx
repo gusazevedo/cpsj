@@ -1,15 +1,38 @@
 import gallery1 from "@/assets/gallery-1.jpg";
 import gallery2 from "@/assets/gallery-2.jpg";
 import gallery3 from "@/assets/gallery-3.jpg";
-import { useState } from "react";
+import { useRef, useState } from "react";
+import { ArrowBigLeft, ArrowBigRight } from "lucide-react";
+import { Link } from "react-router-dom";
+import { Button } from "@/components/ui/button";
+import GalleryImageCard from "@/components/GalleryImageCard";
+import auditorioOne from "@/assets/auditorio/auditorio-1.jpeg";
+import auditorioTwo from "@/assets/auditorio/auditorio-2.jpeg";
+import insideOne from "@/assets/interna/interna - 1.jpeg";
+import insideTwo from "@/assets/interna/interna - 2.jpeg";
+import outsideOne from "@/assets/externa/externa-1.jpeg";
+import outsideTwo from "@/assets/externa/externa-2.jpeg";
 
 const Gallery = () => {
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
+  const carouselRef = useRef<HTMLDivElement>(null);
+
+  const scrollCarousel = (direction: "left" | "right") => {
+    const container = carouselRef.current;
+    if (!container) return;
+    const scrollAmount = container.clientWidth * 0.8;
+    container.scrollBy({
+      left: direction === "left" ? -scrollAmount : scrollAmount,
+      behavior: "smooth",
+    });
+  };
 
   const images = [
-    { src: gallery1, alt: "Fachada externa do Centro Pastoral", title: "Vista Externa" },
-    { src: gallery2, alt: "Interior do salão principal", title: "Salão de Reuniões" },
-    { src: gallery3, alt: "Vista aérea do complexo", title: "Vista Aérea" },
+    { src: auditorioOne, alt: "Auditório 1", title: "Auditório 1" },
+    { src: insideTwo, alt: "Área interna 2", title: "Área interna 2" },
+    { src: auditorioTwo, alt: "Auditório 2", title: "Auditório 2" },
+    { src: outsideTwo, alt: "Área externa 2", title: "Área externa 2" },
+    { src: insideOne, alt: "Área interna 1", title: "Área interna 1" },
   ];
 
   return (
@@ -23,27 +46,47 @@ const Gallery = () => {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-6">
-            {images.map((image, index) => (
-              <div 
-                key={index}
-                className="group cursor-pointer"
-                onClick={() => setSelectedImage(image.src)}
-              >
-                <div className="relative overflow-hidden rounded-xl shadow-[var(--shadow-soft)] hover:shadow-[var(--shadow-hover)] transition-all duration-300">
-                  <img 
-                    src={image.src} 
-                    alt={image.alt}
-                    className="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-300"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-foreground/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    <div className="absolute bottom-4 left-4 right-4">
-                      <h3 className="text-primary-foreground font-semibold text-lg">{image.title}</h3>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            ))}
+          <div className="relative -mx-4">
+            <div 
+              ref={carouselRef}
+              className="flex gap-6 overflow-x-auto snap-x snap-mandatory scroll-smooth px-4 md:px-6 lg:px-8 pb-4 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
+              style={{ WebkitOverflowScrolling: "touch" }}
+            >
+              {images.map((image, index) => (
+                <GalleryImageCard
+                  key={`${image.alt}-${index}`}
+                  src={image.src}
+                  alt={image.alt}
+                  title={image.title}
+                  className="flex-shrink-0 snap-center w-[80%] md:w-[45%] lg:w-[30%]"
+                  onClick={() => setSelectedImage(image.src)}
+                />
+              ))}
+            </div>
+
+            <button
+              type="button"
+              onClick={() => scrollCarousel("left")}
+              className="hidden md:flex absolute left-2 top-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-background/90 text-foreground shadow-lg hover:bg-background transition-colors w-12 h-12"
+              aria-label="Imagem anterior"
+            >
+              <ArrowBigLeft />
+            </button>
+
+            <button
+              type="button"
+              onClick={() => scrollCarousel("right")}
+              className="hidden md:flex absolute right-2 top-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-background/90 text-foreground shadow-lg hover:bg-background transition-colors w-12 h-12"
+              aria-label="Próxima imagem"
+            >
+              <ArrowBigRight />
+            </button>
+          </div>
+
+          <div className="mt-10 flex justify-center">
+            <Button size="lg" asChild>
+              <Link to="/galeria">Ver galeria completa</Link>
+            </Button>
           </div>
         </div>
       </div>
