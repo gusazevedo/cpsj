@@ -51,15 +51,15 @@ const GalleryPage = () => {
   return (
     <main className="min-h-screen bg-card">
       <Navbar />
-      <div className="container mx-auto px-4 py-20">
+      <div className="container mx-auto px-4 py-20 pt-40">
         <div className="max-w-6xl mx-auto space-y-16">
-          <div className="text-center">
+          <div className="items-center justify-center gap-2 text-center">
             <h1 className="text-4xl md:text-5xl font-bold text-foreground">Galeria de fotos</h1>
           </div>
 
           {sections.map((section) => (
             <section key={section.title} className="space-y-6">
-              <h2 className="text-3xl font-semibold text-foreground text-center md:text-left">{section.title}</h2>
+              <h2 className="text-3xl font-semibold text-foreground text-left">{section.title}</h2>
 
               <div className="md:hidden -mx-4">
                 <div
